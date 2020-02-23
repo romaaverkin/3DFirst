@@ -510,7 +510,7 @@ MonoBehaviour:
   sensitivityVert: 9
   minimumVert: -45
   maximumVert: 45
-  axes: 2
+  axes: 0
 --- !u!1 &415781147
 GameObject:
   m_ObjectHideFlags: 0
