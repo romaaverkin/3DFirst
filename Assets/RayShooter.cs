@@ -11,9 +11,19 @@ public class RayShooter : MonoBehaviour
     void Start()
     {
         _camera = GetComponent<Camera>();
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
-    // Update is called once per frame
+    void OnGUI()
+    {
+        int size = 12;
+        float posX = _camera.pixelWidth / 2 - size / 4;
+        float posY = _camera.pixelHeight / 2 - size / 2;
+        GUI.Label(new Rect(posX, posY, size, size), "*");
+    }
+
     void Update()
     {
         if (Input.GetMouseButton(0))
@@ -23,7 +33,7 @@ public class RayShooter : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
-                Debug.Log("Hit" + hit.point);
+                // Debug.Log("Hit" + hit.point);
                 StartCoroutine(SphereIndicator(hit.point));
             }
         }
