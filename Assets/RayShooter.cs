@@ -38,7 +38,7 @@ public class RayShooter : MonoBehaviour
 
                 if (target != null)
                 {
-                    Debug.Log("Target hit!");
+                    target.ReactHit();
                 }
                 else
                 {
